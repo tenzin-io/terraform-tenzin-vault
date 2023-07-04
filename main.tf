@@ -9,6 +9,11 @@ resource "helm_release" "vault" {
   values = [
     data.template_file.vault_values.rendered
   ]
+
+  timeouts {
+    create = "30m"
+    delete = "30m"
+  }
 }
 
 data "template_file" "vault_values" {
