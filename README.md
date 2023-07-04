@@ -7,13 +7,6 @@ The Vault Helm chart repo can be found here:
 <!-- BEGIN_TF_DOCS -->
 
 
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.9.0 |
-| <a name="provider_template"></a> [template](#provider\_template) | 2.2.0 |
-
 ## Resources
 
 | Name | Type |

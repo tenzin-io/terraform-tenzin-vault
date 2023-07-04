@@ -4,7 +4,7 @@ resource "helm_release" "vault" {
   name             = "vault"
   create_namespace = true
   namespace        = var.vault_namespace
-  version          = "0.24.0"
+  version          = "0.25.0"
 
   values = [
     data.template_file.vault_values.rendered
