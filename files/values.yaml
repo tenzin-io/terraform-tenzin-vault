@@ -1,4 +1,9 @@
+global:
+  enabled: false
+
 server:
+  image:
+    tag: "1.15"
   ingress:
     enabled: true
     annotations:
@@ -71,3 +76,6 @@ server:
 
 ui:
   enabled: true
+
+injector:
+  enabled: false

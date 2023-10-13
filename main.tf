@@ -6,18 +6,11 @@ resource "helm_release" "vault" {
   namespace        = var.vault_namespace
   version          = "0.25.0"
 
-  values = [
-    data.template_file.vault_values.rendered
-  ]
-
-  timeout = "1800"
-}
-
-data "template_file" "vault_values" {
-  template = file("${path.module}/files/values.yaml")
-  vars = {
+  values = [templatefile("${path.module}/files/values.yaml", {
     vault_backup_repo_url = var.vault_backup_repo_url
     vault_fqdn            = var.vault_fqdn
     cert_issuer_name      = var.cert_issuer_name
-  }
+  })]
+
+  timeout = "1800"
 }
